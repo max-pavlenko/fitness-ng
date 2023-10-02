@@ -1,0 +1,7 @@
+<div class="select-type">
+   <button (click)="setSelected(option)" *ngFor="let option of options"
+           [class.active]="option === value" class="select-type__pane">
+      <img [alt]="option" height="35" ngSrc="assets/img/{{ option }}.svg" width="35">
+      <p>{{ option }}</p>
+   </button>
+</div>

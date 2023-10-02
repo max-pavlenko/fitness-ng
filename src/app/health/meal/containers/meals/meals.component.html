@@ -1,0 +1,5 @@
+<ft-health-management [itemDescriptionHandler]="getMealDescription" [items$]="mealsService.db.data$"
+                      [onDelete]="deleteMeal" [onModalClose]="handleManageMealsModalClose"
+                      [onModalOpen]="handleManageMealsModalOpen" title="meal">
+   <ft-form-meal (onSubmit)="handleMealSubmit($event)" [defaultValues]="selectedMeal"/>
+</ft-health-management>

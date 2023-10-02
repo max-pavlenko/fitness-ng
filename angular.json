@@ -5,13 +5,16 @@
          "component": {
             "changeDetection": "OnPush",
             "style": "scss",
-            "skipTests": true
+            "skipTests": true,
+            "standalone": true
          },
          "directive": {
-            "skipTests": true
+            "skipTests": true,
+            "standalone": true
          },
          "pipe": {
-            "skipTests": true
+            "skipTests": true,
+            "standalone": true
          },
          "service": {
             "skipTests": true
@@ -30,7 +33,7 @@
          },
          "root": "",
          "sourceRoot": "src",
-         "prefix": "ng",
+         "prefix": "ft",
          "architect": {
             "build": {
                "builder": "@angular-devkit/build-angular:browser",
@@ -47,7 +50,8 @@
                      "src/assets"
                   ],
                   "styles": [
-                     "src/styles.css"
+                     "@angular/material/prebuilt-themes/indigo-pink.css",
+                     "src/styles.scss"
                   ],
                   "scripts": []
                },
@@ -109,7 +113,8 @@
                      "src/assets"
                   ],
                   "styles": [
-                     "src/styles.css"
+                     "@angular/material/prebuilt-themes/indigo-pink.css",
+                     "src/styles.scss"
                   ],
                   "scripts": []
                }

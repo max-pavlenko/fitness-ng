@@ -1,0 +1,26 @@
+<div class="schedule-section">
+   <div class="schedule-section__bar">
+      {{ name }}
+   </div>
+
+   <div class="flex flex-col">
+      <button (click)="onSelect('meals', section.meals)" *ngIf="section?.meals; else addMeal" class="schedule-section__item food">
+         <span>{{ section.meals?.join(', ') }}</span>
+      </button>
+      <ng-template #addMeal>
+         <button
+            (click)="onSelect('meals')"
+            class="schedule-section__item">
+            Assign meal
+         </button>
+      </ng-template>
+      <button (click)="onSelect('workouts', section.workouts)" *ngIf="section?.workouts; else addWorkout" class="schedule-section__item workout">
+         <span>{{ section.workouts?.join(', ') }}</span>
+      </button>
+      <ng-template #addWorkout>
+         <button (click)="onSelect('workouts')" class="schedule-section__item">
+            Assign workout
+         </button>
+      </ng-template>
+   </div>
+</div>

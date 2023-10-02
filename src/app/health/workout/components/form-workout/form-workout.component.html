@@ -1,0 +1,48 @@
+<form (ngSubmit)="handleSubmit()" [formGroup]="form" class="workout-form">
+   <div class="workout-form__formGroup">
+      <h3>Workout name</h3>
+      <ft-input [placeholder]="placeholder" name="name"/>
+      <ft-control-error *ngIf="required('name') && touched('name')">
+         Workout name is required
+      </ft-control-error>
+   </div>
+   <div class="workout-form__formGroup">
+      <h3>Type</h3>
+      <ft-row-select [options]="['strength', 'endurance']" formControlName="type"/>
+   </div>
+
+   <div class="relative">
+      <div [class.hidden]="form.controls.type.value !== 'strength'" class="workout-form__fields" formGroupName="strength">
+         <label>
+            <h3>Reps</h3>
+            <ft-input name="reps" type="number"/>
+         </label>
+         <label>
+            <h3>Sets</h3>
+            <ft-input name="sets" type="number"/>
+         </label>
+         <label>
+            <h3>Weight <span>(kg)</span></h3>
+            <ft-input name="weight" type="number"/>
+         </label>
+      </div>
+
+      <div [class.hidden]="form.controls.type.value !== 'endurance'" class="workout-form__fields" formGroupName="endurance">
+         <label>
+            <h3>Distance <span>(km)</span></h3>
+            <ft-input name="distance" type="number"/>
+         </label>
+         <label>
+            <h3>Duration <span>(minutes)</span></h3>
+            <ft-input name="duration" type="number"/>
+         </label>
+      </div>
+   </div>
+
+   <div class="workout-form__submit">
+      <ft-button [disabled]="form.invalid || !form.dirty" type="submit">
+         {{modeText}} workout
+      </ft-button>
+   </div>
+
+</form>

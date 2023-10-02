@@ -1,0 +1,13 @@
+<div class="app-header">
+   <div class="wrapper">
+      <a routerLink="/">
+         <img alt="logo" class="aspect-square" height="55" ngSrc="assets/img/logo.png" priority="" width="55">
+      </a>
+      <div *ngIf="authService.authState | async; else login" class="app-header__user-info">
+         <button (click)="logoutUser()" class="logout-btn"></button>
+      </div>
+      <ng-template #login>
+         <a routerLink="/auth/login">login</a>
+      </ng-template>
+   </div>
+</div>

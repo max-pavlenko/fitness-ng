@@ -1,0 +1,7 @@
+<div class="calendar">
+   <ft-schedule-controls (move)="handleDateChange($event)" [selectedDate]="selectedDay"/>
+   <ft-schedule-days (onSelectDay)="handleDateSelect($event)" [selectedDayIndex]="selectedDayIndex"/>
+
+   <ft-schedule-section (select)="selectSection($event, section.key)" *ngFor="let section of sections"
+                        [name]="section.name" [section]="getSection(section.key)!"/>
+</div>

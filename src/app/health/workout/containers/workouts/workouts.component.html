@@ -1,0 +1,5 @@
+<ft-health-management [itemDescriptionHandler]="getWorkoutDescription" [items$]="workoutsService.db.data$"
+                      [onDelete]="deleteWorkout" [onModalClose]="handleManageModalClose"
+                      [onModalOpen]="handleManageModalOpen" title="workout">
+   <ft-form-workout (onSubmit)="handleWorkoutSubmit($event)" [defaultValues]="selectedWorkout"/>
+</ft-health-management>

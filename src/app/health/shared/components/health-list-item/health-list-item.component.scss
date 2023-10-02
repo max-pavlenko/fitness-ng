@@ -1,0 +1,62 @@
+@import "src/app/styles/main";
+
+.list-item {
+   display: flex;
+   border-bottom: 1px solid $light-blue;
+
+   &:hover {
+      background-color: #f9f9f9;
+   }
+
+   &__name {
+      flex-grow: 1;
+   }
+
+   &__description {
+      font-size: 12px;
+      color: #8ea6bd;
+      font-style: italic;
+      margin: 0;
+   }
+
+   &__delete {
+      display: flex;
+      align-items: center;
+      margin: 0 10px 0 0;
+
+      p {
+         margin-right: 10px;
+         font-size: 14px;
+      }
+   }
+}
+
+.confirm, .cancel {
+   padding: 5px 10px;
+   margin: 0 0 0 5px;
+   font-size: 14px;
+}
+
+.confirm {
+   color: $white;
+   background: $red;
+   border-radius: 3px;
+
+   &:hover {
+      background: darken($red, 3%);
+   }
+}
+
+.trash {
+   border-left: 1px solid $light-blue;
+   height: 100%;
+   display: grid;
+   place-content: center;
+   padding: 12px 20px;
+   color: #545e6f;
+   background: #f6fafd;
+
+   &:hover {
+      background-color: darken(#f6fafd, 2%);
+   }
+}

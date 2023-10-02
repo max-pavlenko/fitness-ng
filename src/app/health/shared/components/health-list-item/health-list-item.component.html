@@ -1,0 +1,25 @@
+<div class="list-item">
+   <button (click)="handleClick()" class="flex-1 text-[16px] text-[#545e6f] flex flex-col gap-1 px-5 py-3">
+      <span class="list-item__name">{{ item.name }}</span>
+      <p class="list-item__description">
+         <ng-content></ng-content>
+      </p>
+   </button>
+
+   <div [cdkTrapFocus]="isDeleteDialogVisible" class="flex">
+      <div *ngIf="isDeleteDialogVisible" class="list-item__delete">
+         <span>Delete item?</span>
+         <button (click)="handleDeleteMeal()" [autofocus]="isDeleteDialogVisible" class="confirm" type="button">
+            Yes
+         </button>
+         <button (click)="toggleDeleteDialog()" class="cancel" type="button">
+            No
+         </button>
+      </div>
+
+      <button (click)="toggleDeleteDialog()" class="trash" type="button">
+         <img alt="remove" height="24" ngSrc="assets/img/remove.svg" width="24">
+      </button>
+   </div>
+
+</div>

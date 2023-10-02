@@ -1,0 +1,7 @@
+<div class="schedule">
+   <ft-schedule-calendar (onDateChange)="handleDateChange($event)" (onSectionSelect)="handleSectionSelect($event)"
+                         [items]="(scheduleService.schedule$ | async) || {}" [selectedDay]="(date | async)!"/>
+
+   <ft-schedule-assign (cancel)="handleCancelScheduleAssign()" (update)="handleUpdateScheduleAssign($event)"
+                       *ngIf="open" [section]="(scheduleService.section$ | async)!"/>
+</div>

@@ -1,0 +1,10 @@
+<div (click)="close()" [class.visible]="isOpen" class="overlay">
+   <div (click)="preventClosing($event)" cdkTrapFocus class="container">
+      <button (click)="close()" class="ml-auto block mb-3">
+         <img alt="cross" height="24" ngSrc="assets/img/cross.svg" width="24">
+      </button>
+      <div class="content">
+         <ng-content></ng-content>
+      </div>
+   </div>
+</div>

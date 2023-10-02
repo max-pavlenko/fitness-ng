@@ -1,0 +1,21 @@
+<div class="auth-form">
+   <form (ngSubmit)="handleSubmit()" [formGroup]="form">
+      <ng-content select="h1"></ng-content>
+      <input formControlName="email" type="email">
+      <input formControlName="password" type="password">
+      <ft-control-error *ngIf="isPasswordInvalid">
+         Password min length is 6 characters
+      </ft-control-error>
+      <ft-control-error *ngIf="isEmailInvalid">
+         Email if invalid
+      </ft-control-error>
+
+      <div class="auth-form__action">
+         <ng-content select="button"></ng-content>
+      </div>
+      <div class="auth-form__toggle">
+         <ng-content select="a"></ng-content>
+      </div>
+      {{fullName()}}
+   </form>
+</div>

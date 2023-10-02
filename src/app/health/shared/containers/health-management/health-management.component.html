@@ -1,0 +1,45 @@
+<div class="health">
+   <div class="health__title">
+      <h1>
+         <img alt="heart" height="24" ngSrc="assets/img/food.svg" width="24">
+         Your {{title}}s
+      </h1>
+      <button (click)="handleModalToggle()" class="btn__add">
+         <img alt="add" height="24" ngSrc="assets/img/add-white.svg" width="24">
+         New {{title}}
+      </button>
+   </div>
+   <div *ngIf="items$ | async as items; else loading;">
+      <div *ngIf="!items.length; else mealList" class="message">
+         <img alt="face" height="24" ngSrc="assets/img/face.svg" width="24">
+         No {{title}}s, add a new {{title}} to start
+      </div>
+      <ng-template #mealList>
+         <div *ngFor="let item of items;" ftForTrackByProperty="refKey">
+            <ft-health-item (onClick)="handleOpenModal($event)" (onDelete)="onDelete($event)" [item]="item">
+               {{itemDescriptionHandler(item)}}
+            </ft-health-item>
+         </div>
+      </ng-template>
+   </div>
+   <ng-template #loading>
+      <div class="message">
+         <img alt="loading" height="24" ngSrc="assets/img/loading.svg" width="24">
+         Fetching your {{title}}s...
+      </div>
+   </ng-template>
+</div>
+
+<ft-modal (onClose)="handleCloseModal()" [isOpen]="isManageModalOpen">
+   <div class="health">
+      <div class="health__title">
+         <h1>
+            <img alt="create meal" height="24" ngSrc="assets/img/food.svg" width="24">
+            <span>Manage your {{title}}</span>
+         </h1>
+      </div>
+      <div>
+         <ng-content/>
+      </div>
+   </div>
+</ft-modal>

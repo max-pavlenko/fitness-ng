@@ -1,0 +1,43 @@
+@import "src/app/styles/main";
+
+.app-header {
+   background: $white;
+   border-bottom: 1px solid #c1cedb;
+   padding: 7px 0;
+   text-align: center;
+
+   img {
+      display: inline-block;
+   }
+
+   &__user-info {
+      position: absolute;
+      top: 16px;
+      right: 0;
+      cursor: pointer;
+   }
+
+   button {
+      background-size: contain;
+      width: 24px;
+      height: 24px;
+      display: block;
+      opacity: 0.4;
+
+      &:hover {
+         opacity: 0.9;
+      }
+   }
+
+   .logout-btn {
+      background: url('/assets/img/logout.svg') no-repeat;
+   }
+
+}
+
+.wrapper {
+   max-width: 800px;
+   width: 96%;
+   margin: 0 auto;
+   position: relative;
+}

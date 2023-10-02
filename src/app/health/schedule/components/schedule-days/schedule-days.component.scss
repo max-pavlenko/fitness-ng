@@ -1,0 +1,39 @@
+@import "src/app/styles/main";
+
+.days {
+   overflow: hidden;
+   border-top: 1px solid $light-blue;
+   text-align: center;
+   padding: 0 50px;
+}
+
+.day {
+   width: 14.2%;
+   height: 50px;
+   float: left;
+   background: $white;
+   cursor: pointer;
+
+   &:hover span {
+      background: $electric-blue;
+      color: $white;
+   }
+
+   span {
+      color: #545e6f;
+      display: block;
+      margin: 0 auto;
+      padding: 7px 0 0;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all .2s ease-in-out;
+
+      &.active {
+         background: $electric-blue;
+         color: $white;
+      }
+   }
+}

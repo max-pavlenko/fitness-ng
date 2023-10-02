@@ -1,0 +1,33 @@
+@import "src/app/styles/main";
+
+:host {
+   margin: -1px 0 0;
+}
+
+.app-nav {
+   background: rgb(194, 62, 70);
+   text-align: center;
+
+   a {
+      color: rgba(255, 255, 255, .83);
+      padding: 15px 0;
+      display: inline-block;
+      min-width: 150px;
+      font-weight: 500;
+      font-size: 16px;
+      text-transform: uppercase;
+      border-bottom: 3px solid transparent;
+
+      &:hover,
+      &.active {
+         color: white;
+         border-bottom-color: $lilac;
+      }
+   }
+}
+
+.wrapper {
+   max-width: 800px;
+   width: 96%;
+   margin: 0 auto;
+}

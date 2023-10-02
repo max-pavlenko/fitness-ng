@@ -1,0 +1,26 @@
+@import "src/app/styles/main";
+
+.controls {
+   text-align: center;
+   padding: 12px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   p {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+   }
+
+   button {
+      background-color: $white;
+      border: 1px solid $light-blue;
+      aspect-ratio: 1;
+      border-radius: 3px;
+
+      &:hover {
+         background: darken($white, 5%);
+      }
+   }
+}

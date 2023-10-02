@@ -1,0 +1,45 @@
+@import "src/app/styles/main";
+
+.select-type {
+   display: flex;
+   gap: 10px;
+
+   &__pane {
+      flex: 0 0 30%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px;
+      background: #f5f9fd;
+      border: 1px solid $light-blue;
+      border-radius: 3px;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+         background: darken(#f5f9fd, 3%);
+      }
+
+      &.active {
+         background: darken(#f5f9fd, 3%);
+
+         img, p {
+            opacity: 1;
+         }
+      }
+
+      img {
+         opacity: .6;
+         margin: 0 25px 0 0;
+      }
+
+      p {
+         opacity: .6;
+         margin: 0;
+         font-size: 15px;
+         font-weight: 500;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+      }
+   }
+}

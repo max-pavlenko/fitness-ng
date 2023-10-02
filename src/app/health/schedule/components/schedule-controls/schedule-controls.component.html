@@ -1,0 +1,11 @@
+<div class="controls">
+
+   <button (click)="moveDate(offset - 1)" type="button">
+      <img alt="chevron" class="-scale-x-100" height="28" ngSrc="assets/img/chevron-right.svg" width="28">
+   </button>
+   <p>{{ selectedDate | date:'MMM d, y' }}</p>
+   <button (click)="moveDate(offset + 1)" type="button">
+      <img alt="chevron" height="28" ngSrc="assets/img/chevron-right.svg" width="28">
+   </button>
+
+</div>

@@ -1,0 +1,43 @@
+<form (ngSubmit)="handleSubmit()" [formGroup]="form" class="meal-form">
+   <div class="meal-form__formGroup">
+      <h3>Meal name</h3>
+      <ft-input name="name" placeholder="e.g. English Breakfast"/>
+      <ft-control-error *ngIf="required('name') && touched('name')">
+         Workout name is required
+      </ft-control-error>
+   </div>
+
+   <div class="meal-form__formGroup">
+      <div class="meal-form__subtitle">
+         <div class="flex gap-2 items-center">
+            <h3>Food</h3>
+            <button (click)="handleResetIngredientsClick()">
+               <img alt="trash ingredients" height="16" ngSrc="assets/img/trash.svg" width="16">
+            </button>
+         </div>
+         <button (click)="addIngredient()" class="meal-form__add" type="button">
+            <img alt="add" height="24" ngSrc="assets/img/add-white.svg" width="24">
+            Add food
+         </button>
+      </div>
+      <div class="max-h-[28dvh] overflow-y-auto" formArrayName="ingredients">
+         <label *ngFor="let group of ingredients.controls; index as i;" [formGroup]="group" class="ingredient">
+            <ft-input className="rounded-r-none" name='ingredient' placeholder="e.g. Eggs"/>
+            <ft-input [min]="0" className="rounded-none" name='calories'
+                      placeholder="e.g. 150" type="number"/>
+            <button (click)="removeIngredient(i)" class="meal-form__remove" type="button"></button>
+         </label>
+      </div>
+      <ft-control-error *ngIf="required('ingredients')">
+         At least 1 ingredient is required
+      </ft-control-error>
+   </div>
+
+   <div class="meal-form__submit">
+      <ft-button [disabled]="form.invalid || !form.dirty" type='submit'>
+         {{modeText}} meal
+      </ft-button>
+      <div>{{ form.invalid }} {{!form.dirty}}</div>
+   </div>
+
+</form>
