@@ -15,7 +15,7 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
    imports: [CommonModule, FormMealComponent, HealthListItemComponent, ModalComponent, NgOptimizedImage, TrackByPropertyDirective],
    templateUrl: './health-management.component.html',
    styleUrls: ['./health-management.component.scss'],
-   changeDetection: ChangeDetectionStrategy.OnPush
+   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HealthManagementComponent<T extends RefKey & Named> implements OnInit {
    @Input({required: true}) title = '';

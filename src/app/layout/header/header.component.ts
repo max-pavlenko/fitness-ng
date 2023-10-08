@@ -3,11 +3,12 @@ import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {Auth} from "@angular/fire/auth";
 import {AuthService} from "../../auth/shared/services/auth.service";
 import {Router, RouterLink} from "@angular/router";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
    selector: 'ft-header',
    standalone: true,
-   imports: [CommonModule, NgOptimizedImage, RouterLink],
+   imports: [CommonModule, NgOptimizedImage, RouterLink, MatButtonModule],
    templateUrl: './header.component.html',
    styleUrls: ['./header.component.scss'],
    changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,0 +1,4 @@
+@use "../../../../../assets/styles/material" as mat;
+@import "login-page.component-theme";
+
+@include login-page-theme(mat.$custom-theme);

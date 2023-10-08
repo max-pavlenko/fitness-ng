@@ -1,0 +1,27 @@
+@use '@angular/material' as mat;
+@use "sass:map";
+
+$typography: mat.define-typography-config(
+   $font-family: '"Product Sans", sans-serif',
+);
+@include mat.typography-hierarchy($typography);
+
+$custom-primary: mat.define-palette(mat.$blue-palette, 500, 200);
+$custom-accent: mat.define-palette(mat.$amber-palette);
+$custom-success: mat.define-palette(mat.$green-palette);
+$custom-info: mat.define-palette(mat.$light-blue-palette);
+
+$custom-theme: mat.define-light-theme((
+   color: (
+      primary: $custom-primary,
+      accent: $custom-accent,
+   )
+));
+$custom-theme: map.deep-merge($custom-theme, (
+   color: (
+      success: $custom-success,
+      info: $custom-info,
+   )
+));
+
+@include mat.all-component-themes($custom-theme);

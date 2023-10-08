@@ -1,0 +1,12 @@
+@use "@angular/material" as mat;
+@use "sass:map";
+
+@mixin login-page-theme($theme) {
+   $theme-colors: mat.get-color-config($theme);
+   $success: map.get($theme-colors, success);
+   $background: mat.get-color-from-palette($success, 200);
+
+   * {
+      background: $background;
+   }
+}
